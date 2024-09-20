@@ -4,20 +4,20 @@
 name: Bun CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    runs-on:
+      ubuntu-latest
+      # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: oven-sh/setup-bun@v2
-    - run: bun install
-    # - run: bun ci
-    - run: bun run build --if-present
-    - run: bun test
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      # - run: bun ci
+      - run: bun run build
+      - run: bun test
+      - run: curl "https://api.render.com/deploy/srv-crmts8l6l47c73fucdng?key=gjX24k3h4pU"
